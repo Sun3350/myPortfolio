@@ -1,0 +1,32 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.top-container, .bottom-container {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: hidden; /* Hide horizontal overflow */
+  scroll-behavior: smooth; /* Smooth horizontal scrolling */
+  white-space: nowrap;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+}
+
+.carousel-item {
+  width: 100vw; /* Each item takes up full screen width */
+  height: 100vh; /* Each item takes up full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  flex-shrink: 0;
+}
