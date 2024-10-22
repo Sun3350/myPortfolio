@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 import './profile.css';
-import profile from '../../Images/WhatsApp Image 2024-09-17 at 15.39.40_425163dd.jpg';
-import profile2 from '../../Images/profile2.jpg'
+import profile from '../../Images/ay 1.png';
+import profile2 from '../../Images/ay 4.png'
 import { useScroll, motion, useTransform } from 'framer-motion';
 
 const Profile = () => {
@@ -11,6 +11,36 @@ const Profile = () => {
   // Transform the scroll position into an animation value
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
+  const [scrollbarVisible, setScrollbarVisible] = useState(false);
+  let scrollTimeout = null;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show the scrollbar when scrolling
+      setScrollbarVisible(true);
+
+      // Clear any existing timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      // Hide the scrollbar after 1 second of no scrolling
+      scrollTimeout = setTimeout(() => {
+        setScrollbarVisible(false);
+      }, 1000);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
+  }, []);
 
  
   const carouselRef = useRef();
@@ -130,7 +160,7 @@ const Profile = () => {
   return (
     <div className="main-profile w-full">
       <div className="w-full flex flex-col justify-center items-center">
-        <div className="w-full container1 flex justify-between h-16 px-14 items-center">
+        <div className="w-full container1 flex justify-between h-20 px-14 items-center">
           <a href="/" className="uppercase">PROFILE</a>
           <a href="/Achieve" className="uppercase">Achieve</a>
         </div>
@@ -152,18 +182,22 @@ const Profile = () => {
            <div className='w-1/2 h-full'><img className='profile2-image w-full h-full' src={profile2} alt="" /></div>
            <div className='w-1/2 h-full px-24'> 
             <p className='font-bold text-3xl'>is an Abuja based freelanced web developer</p>
-            <p className='mt-10'>—in love with music and stories. On her youtube channel; she makes interviews, vlogs, and other experimental videos. She has previously worked at some of the best content studios in West Africa.</p>
-            <p className='mt-10'>Eniola Korty, you may know her online as Korty Eo, leaves no room for error when it comes to creating. Korty has an impressive resume, as she credits being a graphic designer, model, artist, filmmaker, and now YouTuber. Her honest and frank storytelling, combined with her engaging and beautiful B-roll shots of her hometown, make for an engaging and captivating channel.</p>
+            <p className='mt-10'>—Ayomide Isaac is a skilled full-stack web developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and back-end development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
+            <p className='mt-10'>His work reflects a commitment to clean code, innovative problem-solving, and a constant drive for improvement, making him a valuable asset in any tech-driven project.</p>
            </div>
         </div>
         <motion.div
-        className="top-container"
+        className="top-container p-32"
         initial={{ opacity: 1 }}
         animate={scrollAtStart ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1>Top Container</h1>
-        <p>Scroll down to enter the carousel, and horizontal scrolling will take over.</p>
+       <div className='w-3/4 h-full flex text-left font-bold text-3xl'>
+       "His journey as a full-stack developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
+       </div>
+       <div className='w-1/2 h-full flex text-left pl-24'>
+       "Ayomide Isaac graduated with a B.Tech in Physics Telecommunications from the Federal University of Technology, Minna, and have been passionate about software development for over 4 years."
+       </div>
       </motion.div>
       <motion.div
         className="top-container"

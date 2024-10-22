@@ -1,7 +1,7 @@
 
 .profile-image-container{
     width: 90%;
-    height:85vh ;
+    height:80vh ;
 }
 
 .parallax {
@@ -48,7 +48,7 @@
     margin-right: 2vh;
     background-color: blue;
   }
-  .top-container, .bottom-container {
+  .top-container{
     height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
@@ -75,3 +75,28 @@
     flex-shrink: 0;
   }
   
+
+ /* Custom scrollbar styling */
+body::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5); /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Make the track transparent */
+}
+
+/* Transition for smooth appearance and disappearance */
+.scrollbar-hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.scrollbar-visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}

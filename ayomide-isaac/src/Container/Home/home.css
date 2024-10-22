@@ -23,7 +23,6 @@
    justify-content: center;
    align-items: center;
    object-fit: contain;
-   background-image: url('../../Images/WhatsApp\ Image\ 2024-09-17\ at\ 15.39.40_425163dd.jpg');
    background-position: center;
    background-size: cover;
 }
@@ -112,7 +111,6 @@
     right: 15vh;
     width: 45vw; /* Take up half the screen width */
     height: 85vh; /* Full screen height */
-    background-image: url('../../Images/WhatsApp\ Image\ 2024-09-17\ at\ 15.39.40_425163dd.jpg'); /* Replace with your image */
     background-size: cover; /* Make sure the image covers the container */
     background-position: center;
     filter: blur(5px);

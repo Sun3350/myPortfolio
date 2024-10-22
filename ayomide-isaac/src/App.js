@@ -5,6 +5,7 @@ import Home from './Container/Home/Home'; // Example of your home component
 import About from './Container/Profile/Profile'; // Example of another component
 import { motion } from 'framer-motion';
 import CursorFollower from './Page/CursorFollower';
+import MainHome from './Container/Mainhome/MainHome';
 
 const AppContent = () => {
   const location = useLocation();
@@ -39,7 +40,8 @@ const AppContent = () => {
         style={{ display: contentVisible ? 'block' : 'none' }} // Ensure content is hidden until ready
       >
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<MainHome />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/Profile" element={<About />} />
           {/* Add more routes as needed */}
         </Routes>

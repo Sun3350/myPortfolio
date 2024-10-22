@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { motion } from "framer-motion";
 import video1 from '../../Images/1.mp4'
 import video2 from '../../Images/2.mp4'
+import profile from '../../Images/ay 2.png'
+import imageblur from '../../Images/ay 3.png'
 import './home.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -77,7 +79,9 @@ const Home = () => {
       </div>
       <div className='w-full flex items-center container2'>
          <div className='profile-container flex items-center h-full justify-center ' >
-          <div className='profile-image'></div>
+          <div className='profile-image'>
+            <img src={profile} alt="" />
+          </div>
           {videoVisible && (
         <motion.video
           src={videoSrc} // Dynamic video source
@@ -177,7 +181,7 @@ const Home = () => {
                      </motion.div>
                     
         </div>
-        <div className='w-60 flex justify-center '>
+        <div className='w-60 flex justify-center text-white '>
           <p>vthese mostly go on instagram to her 23k plus audience. 🔥 edits, we highly recommend</p></div>
       </div>
         <div className='flex w-full h-32 justify-between items-center mt-4 ' >
@@ -245,7 +249,9 @@ const Home = () => {
       </div>
      
       </div>
-      <div className="image-container"></div>
+      <div className="image-container">
+        <img src={imageblur} alt="" style={{height:'100%'}} />
+      </div>
     </div>
   )
 }
