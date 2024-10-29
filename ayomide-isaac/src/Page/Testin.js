@@ -1,106 +1,57 @@
-import React, { useCallback, useEffect, useRef } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './page.css'; // Make sure your CSS matches the original styles
 
-import './page.css'
-const TWEEN_FACTOR_BASE = 0.2
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
-const EmblaCarousel = (props) => {
-  const { slides, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false} ,[WheelGesturesPlugin({ forceWheelAxis: 'y'})],
-  )
-  const tweenFactor = useRef(0)
-  const tweenNodes = useRef([])
-
-
-  const setTweenNodes = useCallback((emblaApi) => {
-    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector('.embla__parallax__layer')
-    })
-  }, [])
-
-  const setTweenFactor = useCallback((emblaApi) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length
-  }, [])
-
-  const tweenParallax = useCallback((emblaApi, eventName) => {
-    const engine = emblaApi.internalEngine()
-    const scrollProgress = emblaApi.scrollProgress()
-    const slidesInView = emblaApi.slidesInView()
-    const isScrollEvent = eventName === 'scroll'
-
-    emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-      let diffToTarget = scrollSnap - scrollProgress
-      const slidesInSnap = engine.slideRegistry[snapIndex]
-
-      slidesInSnap.forEach((slideIndex) => {
-        if (isScrollEvent && !slidesInView.includes(slideIndex)) return
-
-        if (engine.options.loop) {
-          engine.slideLooper.loopPoints.forEach((loopItem) => {
-            const target = loopItem.target()
-
-            if (slideIndex === loopItem.index && target !== 0) {
-              const sign = Math.sign(target)
-
-              if (sign === -1) {
-                diffToTarget = scrollSnap - (1 + scrollProgress)
-              }
-              if (sign === 1) {
-                diffToTarget = scrollSnap + (1 - scrollProgress)
-              }
-            }
-          })
-        }
-
-        const translate = diffToTarget * (-1 * tweenFactor.current) * 100
-        const tweenNode = tweenNodes.current[slideIndex]
-        tweenNode.style.transform = `translateX(${translate}%)`
-      })
-    })
-  }, [])
+const HorizontalScroll = () => {
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (sectionRef.current) {
+      const animationWrap = sectionRef.current.querySelector('.animation-wrap');
+      const direction = animationWrap.classList.contains('to-left') ? '-100%' : '100%';
 
-    setTweenNodes(emblaApi)
-    setTweenFactor(emblaApi)
-    tweenParallax(emblaApi)
-
-    emblaApi
-      .on('reInit', setTweenNodes)
-      .on('reInit', setTweenFactor)
-      .on('reInit', tweenParallax)
-      .on('scroll', tweenParallax)
-      .on('slideFocus', tweenParallax)
-  }, [emblaApi, tweenParallax])
+      gsap.to(animationWrap, {
+        x: direction,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: '+=200%',
+          scrub: true,
+          pin: true,
+        },
+      });
+    }
+  }, []);
 
   return (
-    <div className="embla">
-      <div className='top-container'>
-        what is here 
-      </div>
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__parallax">
-                <div className="embla__parallax__layer">
-                  <img
-                    className="embla__slide__img embla__parallax__img"
-                    src={`https://picsum.photos/600/350?v=${index}`}
-                    alt="Your alt text"
-                  />
-                </div>
+    <div>
+      <section className="blank">
+        <h1>ScrollTrigger Bi-Directional Fake Horizontal Scroll</h1>
+        <p>...</p>
+      </section>
+
+      <section className="horizontal" ref={sectionRef}>
+        <div className="pin-wrap">
+          <div className="animation-wrap to-right">
+            {[...Array(10)].map((_, index) => (
+              <div key={index} className="item">
+                Item {index + 1}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      
+      <section className="blank">
+        <h1>...ScrollTrigger for the win...</h1>
+        <p>...</p>
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default EmblaCarousel
+export default HorizontalScroll;

@@ -2,11 +2,20 @@ import React, {useEffect, useState, useRef} from 'react';
 import './profile.css';
 import profile from '../../Images/ay 1.png';
 import profile2 from '../../Images/ay 4.png'
+import profile3 from '../../Images/ay 2.png'
 import { useScroll, motion, useTransform } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import work1 from  '../../Images/LOGO.png'
+import work2 from  '../../Images/pexel.jpg'
+import loan from  '../../Images/loan.jpg'
+import loan2 from  '../../Images/logo (1).png'
+import console from  '../../Images/ay 5.png'
 
 const Profile = () => {
   // Capture the scroll position
   const { scrollYProgress } = useScroll();
+  const text = "• VIEW AYOMIDE ISAAC's CV •";
 
   // Transform the scroll position into an animation value
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
@@ -134,14 +143,7 @@ const Profile = () => {
       }
     };
   }, []);
-  const carouselContent = [
-    { id: 1, title: 'Item 1', description: 'Description for item 1', color: '#FF6347' },
-    { id: 2, title: 'Item 2', description: 'Description for item 2', color: '#4682B4' },
-    { id: 3, title: 'Item 3', description: 'Description for item 3', color: '#32CD32' },
-    { id: 4, title: 'Item 4', description: 'Description for item 4', color: '#FFD700' },
-    { id: 5, title: 'Item 5', description: 'Description for item 5', color: '#8A2BE2' },
-    // Add more items if needed
-  ];
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -160,9 +162,9 @@ const Profile = () => {
   return (
     <div className="main-profile w-full">
       <div className="w-full flex flex-col justify-center items-center">
-        <div className="w-full container1 flex justify-between h-20 px-14 items-center">
-          <a href="/" className="uppercase">PROFILE</a>
-          <a href="/Achieve" className="uppercase">Achieve</a>
+        <div className="w-full container1 flex justify-between h-20  px-5 md:px-14 items-center">
+          <a href="/" className="text-sm sm:text-1xl uppercase">HOME</a>
+          <a href="/Achieve" className=" text-sm sm:text-1xl uppercase">Achieve</a>
         </div>
         
         {/* Profile Image */}
@@ -173,45 +175,85 @@ const Profile = () => {
         {/* Parallax Text */}
         <div className="parallax">
           <motion.div className="scroller" style={{ x }}>
-            <span>OLUSANYA AYOMIDE ISAAC</span>
-            <span>OLUSANYA AYOMIDE ISAAC</span>
-            <span>OLUSANYA AYOMIDE ISAAC</span>
+            <span className='inline'>AYOMIDE <h6 className='italic inline '>Isaac</h6></span>
+            <span className='inline'>AYOMIDE <h6 className='italic inline '>Isaac</h6></span>
+            <span className='inline'>AYOMIDE <h6 className='italic inline '>Isaac</h6></span>
           </motion.div>
         </div>
-        <div className='flex h '>
-           <div className='w-1/2 h-full'><img className='profile2-image w-full h-full' src={profile2} alt="" /></div>
-           <div className='w-1/2 h-full px-24'> 
+        <div className='flex about px-8 md:px-14 h-auto'>
+           <div className='h-full about-one'><img className='profile2-image w-full h-full' src={profile2} alt="" /></div>
+           <div className='h-full about-two p-0 md:pl-16 lg:px-20'> 
             <p className='font-bold text-3xl'>is an Abuja based freelanced web developer</p>
-            <p className='mt-10'>—Ayomide Isaac is a skilled full-stack web developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and back-end development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
-            <p className='mt-10'>His work reflects a commitment to clean code, innovative problem-solving, and a constant drive for improvement, making him a valuable asset in any tech-driven project.</p>
+            <p className='mt-10 text-sm lg:text-[15px]'>—Ayomide Isaac is a skilled full-stack web developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and back-end development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
+            <p className='mt-10 text-sm lg:text-[15px]'>His work reflects a commitment to clean code, innovative problem-solving, and a constant drive for improvement, making him a valuable asset in any tech-driven project.</p>
            </div>
         </div>
         <motion.div
-        className="top-container p-32"
+        className="top-container p-8 md:p-14 lg:p-28 w-full"
         initial={{ opacity: 1 }}
         animate={scrollAtStart ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-       <div className='w-3/4 h-full flex text-left font-bold text-3xl'>
+       <div className='w-full md:w-3/4  h-full flex text-left font-bold text-2xl lg:text-3xl'>
        "His journey as a full-stack developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
        </div>
-       <div className='w-1/2 h-full flex text-left pl-24'>
+       <div className='lg:w-1/2 w-full md:w-[30%] h-full flex text-left pl-0 mt-5 md:mt-0 md:pl-10 lg:pl-20'>
        "Ayomide Isaac graduated with a B.Tech in Physics Telecommunications from the Federal University of Technology, Minna, and have been passionate about software development for over 4 years."
        </div>
       </motion.div>
+        
+
+
+
+
+
+     
+
+
       <motion.div
-        className="top-container"
+        className="mobile-item px-5 w-full"
         initial={{ opacity: 1 }}
-        animate={scrollAtStart ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1>Top Container</h1>
-        <p>Scroll down to enter the carousel, and horizontal scrolling will take over.</p>
+       <motion.div
+            className=""
+            variants={itemVariants}
+          >
+              <div className=' w-full h-full flex justify-center items-center flex-col'>
+               <div className='text-right'>Ayomide Isaac as worked across different tech companies,realEstate companies, finTech companies, digitalmarketing companies and now a freelancer.</div>
+                <h5 className=' tetx-1xl w-full text-right'>WORK</h5>
+            </div>
+            <div className='w-full h-full flex justify-center items-center flex-col'>
+                <img src={profile3} alt=""  style={{width:'50%'}}/>
+                <p className='text-black text-[14px] mt-5'>Ayomide Isaac (August 2024)</p>
+            </div>
+          
+          </motion.div>
+       <motion.div
+            className="w-full text-right flex flex-col mt-5"
+            variants={itemVariants}
+          >
+              <a href='/' className='text-6xl overflow-x-hidden overflow-y-hidden my-2'>GLOO</a>
+              <a href='/' className='text-6xl overflow-x-hidden overflow-y-hidden my-2'>AAu Stories</a>
+              <a href='/' className='text-6xl overflow-x-hidden overflow-y-hidden my-2'>Techabari</a>
+              <a href='/' className='text-6xl overflow-x-hidden overflow-y-hidden my-2'>Nestgeeks</a>
+              <a href='/' className='text-6xl overflow-x-hidden overflow-y-hidden my-2'>DEHELPMATE</a>
+              <a href='/' className='text-6xl overflow-x-hidden overflow-y-hidden my-2'>NESTEBOOKS</a>
+              
+          
+          </motion.div>
       </motion.div>
+
+
+
+
+
+
+
 
       {/* Carousel Container */}
       <motion.div
-        className="carousel-container"
+        className="carousel-container "
         ref={carouselRef}
         style={{
           overflowY: scrollAtEnd ? 'auto' : 'hidden', // Allow vertical scroll after horizontal ends
@@ -220,19 +262,164 @@ const Profile = () => {
         animate={inCenter ? "visible" : "hidden"} // Trigger staggered animation when carousel is centered
         variants={containerVariants}
       >
-        {carouselContent.map((item) => (
+       
           <motion.div
             className="carousel-item"
-            key={item.id}
             variants={itemVariants}
-            style={{ backgroundColor: item.color }}
           >
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
+            <div className='work h-full flex justify-center items-center flex-col'>
+                <img src={profile3} alt=""  style={{width:'70%'}}/>
+                <p className='text-black text-[14px] mt-5'>Ayomide Isaac (August 2024)</p>
+            </div>
+            <div className=' work-second h-full flex justify-center items-center flex-col'>
+               <h5 className=' work-p '>WORK</h5>
+               <div className='hhh'>Ayomide Isaac as worked across different tech companies,realEstate companies, finTech companies, digitalmarketing companies and now a freelancer.</div>
+               <div className='flex w-full justify-center items-center h-48'><div className='work-direction'><FontAwesomeIcon icon={faArrowRight}/></div> <div className='ml-5 w-60 whitespace-normal'>Here are some featured projects, keep scrolling to seee</div></div>
+            </div>
           </motion.div>
+        
+          <motion.div
+            className="carousel-item2"
+          
+            variants={itemVariants}
+            
+          >
+            <div className='work flex pt-20 pr-10 items-end  flex-col'>
+              <h2 className='text-4xl'>NESTGEEKS REALTY INVESTMENT LTD</h2>
+              <img src={work1} alt=""  style={{width:'20%', marginTop:'5vh', marginBottom:'5vh'}}/>
+                  <div className='work-direction cursor-pointer '>
+                  <FontAwesomeIcon icon={faArrowRight} className='rotate-45'/>
+                  </div>
+            </div>
+            <div className='work-second pt-20'>
+              <img src={work2} alt="" style={{width:'50%'}}/>
+              <div className='w-56 mt-10'>Developed a very dynamic and a user friendly website for a real Estate in Lagos Nigeria</div>
+            </div>
+          </motion.div>
+        
+          <motion.div
+            className="carousel-item2"
+            variants={itemVariants}
+          >
+             <div className='work flex pt-20 pr-10 items-end  flex-col'>
+              <h2 className='text-4xl'>NESTGEEKS REALTY INVESTMENT LTD</h2>
+              <img src={work1} alt=""  style={{width:'20%', marginTop:'5vh', marginBottom:'5vh'}}/>
+                  <div className='work-direction cursor-pointer '>
+                  <FontAwesomeIcon icon={faArrowRight} className='rotate-45'/>
+                  </div>
+            </div>
+            <div className='work-second pt-20'>
+              <img src={work2} alt="" style={{width:'50%'}}/>
+              <div className='w-56 mt-10'>Developed a very dynamic and a user friendly website for a real Estate in Lagos Nigeria</div>
+            </div>
+          </motion.div>
+        
+          <motion.div
+            className="carousel-item2"
+           
+            variants={itemVariants}
+           
+          >
+             <div className='work flex pt-20 pr-10 items-end  flex-col'>
+              <img src={loan} style={{width:'90%'}} alt="" />
+              <div className='work-direction cursor-pointer mt-10 '>
+                  <FontAwesomeIcon icon={faArrowRight} className='rotate-45'/>
+                  </div>
+            </div>
+            <div className='work-second pt-20 relative'>
+             <div className='loan'> DEHELPMATE</div>
+             <div className='w-56 absolute bottom-72'>Developed a very dynamic and a user friendly website for a real Estate in Lagos Nigeria</div>
+             <img src={loan2} className='loan2' style={{width:'20%'}} alt="" />
+            </div>
+          </motion.div>
+        
+          <motion.div
+            className="carousel-item2  text-black"
+           
+            variants={itemVariants}
+           
+          >
+            <div className='work- '>
+              <div className='flex p-10 justify-between'>
+              <div className='work-direction cursor-pointer '>
+                  <FontAwesomeIcon icon={faArrowRight} className='rotate-45'/>
+                  </div>
+                  <div className='w-56 ml-8 '>Developed a very dynamic and a user friendly website for a real Estate in Lagos Nigeria</div>
+
+              </div>
+ 
+              <h2 className='text-[100px] leading-[17vh] px-28'>
+  console.log("Crafting code step by step, 
+  <img 
+    src={console} 
+    alt="" 
+    style={{ width: '12%', display: 'inline', verticalAlign: 'middle', marginLeft:'10px' }} 
+  />
+  mastering one bug at a time");
+</h2>              
+
+            </div>
+            
+          </motion.div>
+          <motion.div
+            className="carousel-item2  text-black items-end"
+            variants={itemVariants}
+          >
+            <div className='thank p-10 '>
+            <span className='inline text-center font-thin'>Thank <h6 className='italic inline '>you!</h6></span>
+            <div className='flex w-full justify-between  h-[60%]'>
+              <div className='w-[19%]  h-full flex flex-col  items-center '>
+                <img src={profile3} alt="" style={{width:'70%'}}/>
+                <p className='mt-5'>Ayomide Isaac</p>
+              </div>
+              <div className='w-[39%] '>
+                <p className='pr-40'>If you enjoyed going through this web experience, consider sharing it on social media so other people get to see it.</p>
+                <div className='flex mt-8'>
+                  <button className='social-button'>X</button>
+                  <button className='social-button'>Instagram</button>
+                  <button className='social-button'>LinkedIn</button>
+                  <button className='social-button'>Tiktok</button>
+                  <button className='social-button'>Github</button>
+                </div>
+              </div>
+              <div className='w-[19%] '>
+                <p>Have a look at the Credits and support all the awesome creators whose works were featured, If you still want to continue the experience, head over to the archive page.</p>
+              </div>
+              <div className='w-[19%]'>
+       <div className="circle-container">
+      <div className="circle">
+        {text.split("").map((char, i) => (
+          <span
+            key={i}
+            style={{ transform: `rotate(${i * (360 / text.length)}deg)` }}
+            className="circle-text text-black"
+          >
+            {char}
+          </span>
         ))}
+      </div>
+      {/* Icon in the middle */}
+      <div className="icon-center "  >
+      <FontAwesomeIcon 
+        className='cursor-pointer text-black'
+        icon={faArrowRight} 
+      />{/* You can replace this with any icon or image */}
+      </div>
+    </div>
+       </div>
+      </div>
+     
+              
+            </div>
+            
+          </motion.div>
+        
       </motion.div>
       </div>
+
+       <div>
+
+       </div>
     </div>
   );
 };

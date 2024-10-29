@@ -1,6 +1,12 @@
 .home-container{
     height: 100vh;
 }
+.sub-home{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
 .profile-container{
     width: 38%;
    
@@ -62,7 +68,9 @@
     position: relative;
     margin: 0 auto; /* Center the circle container */
   }
-  
+  .mobile{
+    display:none;
+  }
   .circle {
     position: relative;
     width: 100%;
@@ -118,8 +126,30 @@
   }   
   
 
-  @media screen and (max-width: 1024px) {
-    .h5 {
-      font-size: 30px;
+  @media screen and (max-width: 880px) {
+    .profile-image{
+      width: 120px;
+   height: 120px;
     }
+  }
+  @media screen and (max-width: 768px) {
+    .home-container{
+      height: auto;
+      display: none;
+      flex-direction: column;
+      align-items:center;
+    }
+    .image-container, .sub-home{
+      display: none;
+    }
+   .mobile{
+    display: flex;
+    flex-direction: column;
+   }
+ .circle-{
+  width: 100%;
+  display: flex;
+  justify-items: center;
+ 
+ }
   }

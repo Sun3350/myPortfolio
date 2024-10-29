@@ -65,9 +65,9 @@ const MainHome = () => {
           />
         </motion.div>
       </motion.div>
-      <div className='  flex absolute bottom-20 left-20 flex-col'>''
-        <p className='text-4xl text-white'>Ayomide</p>
-        <p className='text-4xl text-white'>Isaac</p>
+      <div className=' main-name flex flex-col'>''
+        <p className='text-3xl md:text-4xl text-white'>Ayomide</p>
+        <p className='text-3xl md:text-4xl text-white'>Isaac</p>
       </div>
     </div>
   );
