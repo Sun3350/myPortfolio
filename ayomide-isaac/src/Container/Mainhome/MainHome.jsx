@@ -25,7 +25,7 @@ const MainHome = () => {
   // Variants for fade-in animation of the image
   const fadeInAnimation = {
     initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.1 } },
+    animate: { opacity: 1, transition: { duration: 1 } },
   };
 
   const [isOpen, setIsOpen] = useState(false);
