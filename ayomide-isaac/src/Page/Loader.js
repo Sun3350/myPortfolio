@@ -49,7 +49,7 @@ const Loader = () => {
 
           {/* Text on black slide */}
           <motion.div
-            style={{ position: 'absolute', bottom: '50%', left: '50%', transform: 'translate(-50%, 50%)', color: 'white', fontSize: '100px', textAlign: 'center' }} // Centered and larger font
+            style={{ position: 'absolute', bottom: '50%', left: '60%', transform: 'translate(-50%, 50%)', color: 'white', fontSize: '100px', textAlign: 'center' }} // Centered and larger font
             initial="hidden"
             animate="visible"
             exit="exit" // Ensure exit is triggered
