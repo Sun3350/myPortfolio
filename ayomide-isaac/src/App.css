@@ -36,7 +36,14 @@ font-weight: 300;
 font-style: italic;
 }
 
-h5, a{
+h5{
+  font-family: "Fraunces", serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 40px;
+}
+
+a{
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;
   font-weight: 200;

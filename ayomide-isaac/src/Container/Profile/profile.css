@@ -114,9 +114,8 @@ body::-webkit-scrollbar-track {
   transition: opacity 0.5s ease-in-out;
 }
 .work-p{
-  width: 50vw;
- font-size: 10em;
- color: black;
+  font-family: "Fraunces", serif;
+
 }
 .work, .work-second{
   width: 50vw;
@@ -154,22 +153,18 @@ body::-webkit-scrollbar-track {
   flex-direction: column;
 }
 .hhh{
-  width: 50%; 
-  height: 30vh;
-  overflow-wrap: break-word; 
-  white-space: wrap;
-  padding: 5vh;
+  width: 100%; 
  
 }
 .work-direction{
   width: 70px;
   height: 70px ;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .work-third{
   width: 100vw;
