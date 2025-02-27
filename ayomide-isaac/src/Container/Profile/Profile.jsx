@@ -46,37 +46,38 @@ const Profile = () => {
   const items = [
     {
       content: (
-        <div className="flex w-full justify-center items-center p-10">
-          <div className="w-[80%] flex items-center">
-            <div className='w-[50%] about-one'>
-            <img className='profile2-image w-full h-full rounded-[10px]' src={profile2} alt="" /></div>
-           <div className='h-[70%]  w-[50%]  about-two p-0 md:pl-16 lg:px-20'> 
+        <div className="flex w-full p-5 md:p-10 justify-center items-center">
+          <div className=" top-container top-container2 flex items-center ">
+            <div className='profile2-image about-one'>
+            <img className=' w-full h-full rounded-[10px]' src={profile2} alt="" />
+            </div>
+           <div className='h-[70%]   about-two p-0 md:pl-16 lg:px-20'> 
             <p className='font-bold text-3xl'>is a Lagos based FrontEnd web developer</p>
             <p className='mt-10 text-sm lg:text-[15px]'>—Ayomide Isaac is a skilled Front-End and WordPress web-developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and WordPress web-development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
             <p className='mt-10 text-sm lg:text-[15px]'>His work reflects a commitment to clean code, innovative problem-solving, and a constant drive for improvement, making him a valuable asset in any tech-driven project.</p>
-           </div></div>
+           </div>
+           </div>
           
         </div>
       ),
       bgColor: "bg-blue-500",
     },
     {
-      title: "Personal Details",
-      description: "Some fun facts about me.",
+     
       content: (
-        <div className=" w-full h-full p-10">
+        <div className=" w-full h-full p-3 md:p-10">
           <motion.div
-        className="top-container p-8 md:p-14 lg:p-28 w-full"
+        className="top-container p-5 md:p-14 lg:p-28 w-full"
         
       >
         <div className='w-full md:w-3/4  h-full  text-left font-bold text-2xl lg:text-3xl'>
-          <img src={profile} alt="" style={{width:'20%'}} className="mb-10" />
-           <div >
+          <img src={profile} alt=""  className="mb-10 md:w-[20%] w-30%" />
+           <div className="">
        "His journey as a Front-End and WordPress web-developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
        </div>
         </div>
       
-       <div className='lg:w-1/2 w-full  md:w-[30%] text-[20px] h-full flex items-center text-left pl-0 mt-5 md:mt-0 md:pl-10 lg:pl-20 text[20px] leading-6 '>
+       <div className='lg:w-1/2 w-full  md:w-[30%] text-[16px] h-full flex items-center text-left pl-0 mt-5 md:mt-0 md:pl-10 lg:pl-20 md:text-[20px] leading-6 '>
        "Ayomide Isaac graduated with a B.Tech in Physics Telecommunications from the Federal University of Technology, Minna, and have been passionate about software development for over 4 years."
        </div>
       </motion.div>
@@ -88,18 +89,18 @@ const Profile = () => {
     {
      
       content: (
-        <div className="flex  bg-stone-900 text-white h-full items-center justify-center w-full ">
-            <div className="w-full h-full flex">
-            <div className='w-[50%] about-one'>
+        <div className="flex bg-stone-900 text-white h-full items-center justify-center w-full ">
+              <div className="top-container">
+              <div className='w-[50%] about-one'>
             <div className='w-full h-full flex justify-center items-center flex-col'>
                 <img src={profile3} alt=""  style={{width:'70%'}}/>
                 <p className='text-[14px] mt-5'>Ayomide Isaac (August 2024)</p>
             </div>              
             </div>
-            <div className="w-[50%] about-two p-0 md:pl-16 lg:px-20 flex flex-col justify-center items-center ">
-              <div className="font-light w-full h-36  text-[200px] flex justify-center items-center work-p ">Work</div>
-              <div className='hhh text-lg my-10'>Ayomide Isaac as worked across different tech companies,realEstate companies, finTech companies, digitalmarketing companies and now a freelancer.</div>
-              <div className='flex w-full items-center'><div className='work-direction'><FontAwesomeIcon icon={faArrowDown}/></div> <div className='ml-5 w-60  text-[18px] leading-5'>Here are some featured projects, keep scrolling to seee</div></div>
+            <div className=" about-two p-0 md:pl-16 lg:px-20 flex flex-col justify-center items-center ">
+              <div className="font-light w-full h-36 md:text-[200px] text-[100px] flex justify-center items-center work-p ">Work</div>
+              <div className='hhh text-[17px] md:text-lg my-3 md:my-10 px-5 md:p-0'>Ayomide Isaac as worked across different tech companies,realEstate companies, finTech companies, digitalmarketing companies and now a freelancer.</div>
+              <div className='flex w-full md:mt-0 mt-3 md:p-0 px-5 items-center'><div className='work-direction'><FontAwesomeIcon icon={faArrowDown}/></div> <div className='ml-5 w-60  text-[14px] md:text-[18px] leading-5'>Here are some featured projects, keep scrolling to seee</div></div>
 
             </div>
             </div>
@@ -110,21 +111,23 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full p-10">
-          <div className="flex flex-col ">
+        <div className="w-full h-full md:p-10 p-5">
+          <div className="flex md:flex-col flex-col-reverse">
              <div className="w-full ">
               <h2 className="text-4xl">Gloo</h2>
               <a className="text-lg" href="https://gloo.com">www.gloo.com</a> 
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
-              <div className="flex w-full justify-between mt-5">
-                <div className="w-[75%] h-[20vh]  ">
+                   <p className="md:text-[18px] text-[13px] my-1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
+                   <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">Front-End Devoloper</span></h6>
+                <div className="flex w-full justify-between mt-5 mobile">
+                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span></div>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    </div>
                 </div>
-                <div className="w-[30%] flex justify-center h-full">
-                   <button className="py-3 px-10 text-[15px] bg-black text-white rounded-[50px] "><a href="https://gloo.com">Visit</a></button>
+                <div className="md:w-[30%] w-full flex justify-center h-full">
+                   <button className="py-3 md:px-10 px-20 text-[15px] bg-black text-white rounded-[50px] "><a href="https://gloo.com">Visit</a></button>
 
                 </div>
               </div>
@@ -132,7 +135,7 @@ const Profile = () => {
              <div>
 
              </div>
-             <div className="mt-10">
+             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
               <EmblaCarousel options={OPTIONS} slides={[gloo1, gloo2, gloo3, gloo4, gloo5, gloo6]} />
             </div>
           </div>
@@ -144,21 +147,23 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full p-10">
-          <div className="flex flex-col ">
+        <div className="w-full h-full md:p-10 p-5">
+          <div className="flex md:flex-col flex-col-reverse">
              <div className="w-full ">
-              <h2 className="text-4xl">Comeriver LTD</h2>
-              <a className="text-lg" href="https://gloo.com">www.comeriver.com</a> 
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
-              <div className="flex w-full justify-between mt-5">
-                <div className="w-[75%] h-[20vh]  ">
+             <h2 className="text-4xl">Comeriver LTD</h2>
+             <a className="text-lg" href="https://gloo.com">www.comeriver.com</a> 
+             <p className="md:text-[18px] text-[13px] my-1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
+             <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">Front-End Devoloper</span></h6>
+                <div className="flex w-full justify-between mt-5 mobile">
+                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span></div>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    </div>
                 </div>
-                <div className="w-[30%] flex justify-center h-full">
-                   <button className="py-3 px-10 text-[15px] bg-yellow-600 text-white rounded-[50px] "><a href="https://comeriver.com">Visit</a></button>
+                <div className="md:w-[30%] w-full flex justify-center h-full">
+                   <button className="py-3 md:px-10 px-20 text-[15px] bg-yellow-600 text-white rounded-[50px] "><a href="https://comeriver.com">Visit</a></button>
 
                 </div>
               </div>
@@ -166,7 +171,7 @@ const Profile = () => {
              <div>
 
              </div>
-             <div className="mt-10">
+             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
               <EmblaCarousel options={OPTIONS} slides={[comeriver1, comeriver2, comeriver3, comeriver4, comeriver5, comeriver6]} />
             </div>
           </div>
@@ -178,21 +183,23 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full p-10">
-          <div className="flex flex-col ">
+        <div className="w-full h-full md:p-10 p-5">
+          <div className="flex md:flex-col flex-col-reverse">
              <div className="w-full ">
-              <h2 className="text-4xl">DE-HELPMATE GLOBAL CONCEPT</h2>
+              <h2 className="md:text-4xl text-3xl">DE-HELPMATE GLOBAL CONCEPT</h2>
               <a className="text-lg" href="https://dehelpmate.com.ng/">www.dehelpmate.com.ng</a> 
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
-              <div className="flex w-full justify-between mt-5">
-                <div className="w-[75%] h-[20vh]  ">
+                   <p className="md:text-[18px] text-[13px] my-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
+                   <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">Front-End Devoloper</span></h6>
+                <div className="flex w-full justify-between mt-5 mobile">
+                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span></div>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    </div>
                 </div>
-                <div className="w-[30%] flex justify-center h-full">
-                   <button className="py-3 px-10 text-[15px] bg-blue-600 text-white rounded-[50px] "><a href="https://dehelpmate.com.ng/">Visit</a></button>
+                <div className="md:w-[30%] w-full flex justify-center h-full">
+                   <button className="py-3 md:px-10 px-20 text-[15px] bg-blue-600 text-white rounded-[50px] "><a href="https://gloo.com">Visit</a></button>
 
                 </div>
               </div>
@@ -200,7 +207,7 @@ const Profile = () => {
              <div>
 
              </div>
-             <div className="mt-10">
+             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
               <EmblaCarousel options={OPTIONS} slides={[dehelpmate1, dehelpmate2, dehelpmate3, dehelpmate4, dehelpmate5, dehelpmate6]} />
             </div>
           </div>
@@ -212,21 +219,23 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full p-10">
-          <div className="flex flex-col ">
+        <div className="w-full h-full md:p-10 p-5">
+          <div className="flex md:flex-col flex-col-reverse">
              <div className="w-full ">
               <h2 className="text-4xl">NestEbook</h2>
               <a className="text-lg" href="https://nestebook.com/">www.nestebook.com</a> 
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
-              <div className="flex w-full justify-between mt-5">
-                <div className="w-[75%] h-[20vh]  ">
+                   <p className="md:text-[18px] text-[13px] my-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
+                   <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">WordPress Devoloper</span></h6>
+                <div className="flex w-full justify-between mt-5 mobile">
+                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span></div>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    </div>
                 </div>
-                <div className="w-[30%] flex justify-center h-full">
-                   <button className="py-3 px-10 text-[15px] bg-orange-600 text-white rounded-[50px] "><a href="https://nestebook.com/">Visit</a></button>
+                <div className="md:w-[30%] w-full flex justify-center h-full">
+                   <button className="py-3 md:px-10 px-20 text-[15px] bg-orange-600 text-white rounded-[50px] "><a href="https://gloo.com">Visit</a></button>
 
                 </div>
               </div>
@@ -234,7 +243,7 @@ const Profile = () => {
              <div>
 
              </div>
-             <div className="mt-10">
+             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
               <EmblaCarousel options={OPTIONS} slides={[nestebook1, nestebook2, nestebook3, nestebook4, nestebook5, nestebook6]} />
             </div>
           </div>
@@ -246,21 +255,24 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full p-10">
-          <div className="flex flex-col ">
+        <div className="w-full h-full md:p-10 p-5">
+          <div className="flex md:flex-col flex-col-reverse">
              <div className="w-full ">
-              <h2 className="text-4xl">NestGeeks Realty and Investment LTD</h2>
-              <a className="text-lg" href="https://nestgeeks.org">www.nestgeeks.org</a> 
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
-              <div className="flex w-full justify-between mt-5">
-                <div className="w-[75%] h-[20vh]  ">
+              <h2 className="md:text-4xl text-3xl">NestGeeks Realty and Investment LTD</h2>
+              <a className="text-lg" href="https://nestgeeks.org">www.nestgeeks.org</a>
+                   <p className="md:text-[18px] text-[13px] my-1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
+                   <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">WordPress Devoloper</span></h6>
+
+                <div className="flex w-full justify-between mt-5 mobile">
+                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span></div>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    </div>
                 </div>
-                <div className="w-[30%] flex justify-center h-full">
-                   <button className="py-3 px-10 text-[15px] bg-lime-700 text-white rounded-[50px] "><a href="https://nestgeeks.org">Visit</a></button>
+                <div className="md:w-[30%] w-full flex justify-center h-full">
+                   <button className="py-3 md:px-10 px-20 text-[15px] bg-lime-700 text-white rounded-[50px] "><a href="https://gloo.com">Visit</a></button>
 
                 </div>
               </div>
@@ -268,7 +280,7 @@ const Profile = () => {
              <div>
 
              </div>
-             <div className="mt-10">
+             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
               <EmblaCarousel options={OPTIONS} slides={[nestgeek1, nestgeek2, nestgeek3, nestgeek4, nestgeek5, nestgeek6]} />
             </div>
           </div>
@@ -277,6 +289,7 @@ const Profile = () => {
     
       bgColor: "bg-purple-500",
     },
+   
     {
       title: "Thank You!",
       description: "That's all about me. Thanks for scrolling!",
@@ -316,7 +329,7 @@ const Profile = () => {
     <div className="profile relative h-screen w-full overflow-hidden">
       {/* Initial Top Section */}
       <motion.div
-        className="  flex items-center flex-col w-full h-[150vh] text-black text-4xl font-bold bg-slate-100"
+        className="  flex items-center flex-col w-full h-full text-black text-4xl font-bold bg-slate-100"
         initial={{ y: "0%" }}
         animate={{ y: activeIndex === -1 ? "0%" : "-100%" }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -326,7 +339,7 @@ const Profile = () => {
           <a href="/Achieve" className=" text-sm sm:text-1xl uppercase">Achieve</a>
         </div>
         <div className="profile-image-container">
-          <img className="w-full h-full rounded-[10px]" src={profile} alt="Profile" />
+          <img className="w-full h-full rounded-[10px] object-cover" src={profile} alt="Profile" />
         </div>
         
       

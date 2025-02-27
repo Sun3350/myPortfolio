@@ -24,7 +24,7 @@ const EmblaCarousel = (props) => {
 
   return (
     <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
+      <div className="embla__viewport py-5" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((image, index) => (
             <div className="embla__slide" key={index}>

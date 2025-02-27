@@ -1,6 +1,4 @@
-root{
-  
-}
+
 
 .embla {
     max-width: 78rem;
@@ -24,8 +22,7 @@ root{
     padding-left: var(--slide-spacing);
   }
   .embla__slide__number {
-    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-    font-size: 4rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;    font-size: 4rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -115,3 +112,76 @@ root{
     box-shadow: inset 0 0 0 0.2rem var(--text-body);
   }
   
+
+  @media screen and (max-width: 768px) {
+    .embla__controls{
+      display: none;
+    }
+    .embla__buttons{
+      display: none;
+    }
+    .embla {
+      max-width: 78rem;
+      margin: auto;
+      ----slide-height: 8rem;
+      ----slide-spacing: 1rem;
+      ----slide-size: 40%;
+    }
+    .embla__viewport {
+      overflow: hidden;
+      
+    }
+    .embla__container {
+      display: flex;
+      touch-action: pan-y pinch-zoom;
+      margin-left: calc(var(----slide-spacing) * -1);
+    }
+    .embla__slide {
+      transform: translate3d(0, 0, 0);
+      flex: 0 0 var(----slide-size);
+      min-width: 0;
+      padding-left: var(----slide-spacing);
+    }
+    .embla__slide__number {
+      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;      font-size: 4rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: var(----slide-height);
+      user-select: none;
+    }
+  }
+  @media screen and (max-width: 550px) {
+  
+    .embla {
+      max-width: 78rem;
+      margin: auto;
+      ---slide-height: 8rem;
+      ---slide-spacing: 1rem;
+      ---slide-size: 70%;
+    }
+    .embla__viewport {
+      overflow: hidden;
+    }
+    .embla__container {
+      display: flex;
+      touch-action: pan-y pinch-zoom;
+      margin-left: calc(var(---slide-spacing) * -1);
+    }
+    .embla__slide {
+      transform: translate3d(0, 0, 0);
+      flex: 0 0 var(---slide-size);
+      min-width: 0;
+      padding-left: var(---slide-spacing);
+    }
+    .embla__slide__number {
+      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;      font-size: 4rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: var(---slide-height);
+      user-select: none;
+    }
+  }

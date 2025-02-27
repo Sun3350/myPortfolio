@@ -2,34 +2,11 @@
 .profile-image-container{
   
     width: 90%;
+    height: 100%;
  
 }
 
-.parallax {
-    overflow: hidden;
-    letter-spacing: -2px;
-    line-height: 0.8;
-    margin: 15vh 0vh 15vh 0vh;
-    white-space: nowrap;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-  
-  .parallax .scroller {
-    font-weight: 600;
-    font-size: 64px;
-    display: flex;
-    white-space: nowrap;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  
-  .parallax span {
-    display: block;
-    margin-right: 30px;
-    font-family: "Bricolage Grotesque", sans-serif;
-  }
+
   .h{
     padding: 5vh;
     width: 100%;
@@ -216,7 +193,13 @@ body::-webkit-scrollbar-track {
   display: flex;
   flex-direction: column;
   height: auto;
+  justify-content: center;
+  align-items: center;
 
+}
+.top-container2{
+  width: 100%;
+  overflow-y: auto;
 }
 .parallax {
  margin: 5vh 0vh 5vh 0vh;
@@ -225,9 +208,20 @@ body::-webkit-scrollbar-track {
   display: none;
 
 }
-.mobile-item{
+.mobile-item, .mobile{
   display: flex;
   flex-direction: column;
 }
+.profile2-image {
+  width: 160px;
+  height: 150px;
+  border-radius: 50%;
+}
+.hhh{
+  width: 100%;
+}
+.work-direction{
+  width: 50px;
+  height: 50px ;}
 }
 
