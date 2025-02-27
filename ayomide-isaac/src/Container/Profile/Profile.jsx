@@ -302,27 +302,59 @@ const Profile = () => {
   const isScrolling = useRef(false); // Prevent multiple triggers
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  
+  const touchStartRef = useRef(0);
+  const touchEndRef = useRef(0);
+
   useEffect(() => {
     const handleScroll = (event) => {
-      if (isScrolling.current) return; // Prevent rapid scroll
+      if (isScrolling.current) return; // Prevent rapid scrolling
 
       isScrolling.current = true;
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 1000); // Add a delay for smooth transition
+      setTimeout(() => (isScrolling.current = false), 1100); // Delay for smooth transition
 
       if (event.deltaY > 0 && activeIndex < totalItems - 1) {
-        // Scroll Down (Stop at "Thank You!")
-        setActiveIndex((prevIndex) => prevIndex + 1);
-      } else if (event.deltaY < 0 && activeIndex > -1) {
-        // Scroll Up
-        setActiveIndex((prevIndex) => prevIndex - 1);
+        setActiveIndex((prev) => prev + 1);
+      } else if (event.deltaY < 0 && activeIndex > 0) {
+        setActiveIndex((prev) => prev - 1);
+      }
+    };
+
+    const handleTouchStart = (e) => {
+      touchStartRef.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      touchEndRef.current = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = () => {
+      if (isScrolling.current) return;
+
+      isScrolling.current = true;
+      setTimeout(() => (isScrolling.current = false), 1100); // Prevent spam scrolling
+
+      if (touchStartRef.current - touchEndRef.current > 50 && activeIndex < totalItems - 1) {
+        // Swipe Up → Scroll Down
+        setActiveIndex((prev) => prev + 1);
+      } else if (touchEndRef.current - touchStartRef.current > 50 && activeIndex > 0) {
+        // Swipe Down → Scroll Up
+        setActiveIndex((prev) => prev - 1);
       }
     };
 
     window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, [activeIndex]);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [activeIndex, totalItems]);
 
   return (
     
