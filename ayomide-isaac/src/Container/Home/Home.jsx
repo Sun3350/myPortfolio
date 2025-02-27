@@ -8,6 +8,7 @@ import mobileProfile from '../../Images/ay 5.png'
 import './home.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {useNavigat, useNavigate} from 'react-router-dom'
 const Home = () => {
   
   const text = "• VIEW AYOMIDE ISAAC's PROFILE •";
@@ -55,7 +56,7 @@ const Home = () => {
   const [videoVisible, setVideoVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [videoSrc, setVideoSrc] = useState("");
-  
+  const navigate =  useNavigate()
 
   const handleMouseMove = (e) => {
     // Use the actual mouse position relative to the viewport
@@ -110,7 +111,7 @@ const Home = () => {
             <h1 className='text-1xl md:text-2xl font-semibold'>Ayomide Isaac</h1>
             <h2 className='mt-2 text-sm lg:text-1xl uppercase '>FrontEnd & Wordpress Developer</h2>
           </div>
-          <p className='text-sm lg:text:xs' >Base in Abuja Nigeria</p>
+          <p className='text-sm lg:text:xs' >Base in Lagos Nigeria</p>
          </div>
          </div>
            <div className='w-3/5'>
@@ -128,7 +129,7 @@ const Home = () => {
                        {/* First text (default) */}
                        <motion.h5
                          variants={firstTextVariant}
-                         className="text-[#000000]  text-5xl lg:text-6xl  xl:text-8xl ml-5 uppercase"
+                         className="text-[#000000]  text-5xl lg:text-6xl  xl:text-[5.5rem] ml-5 uppercase"
                        >
                          Frontend - dev
                        </motion.h5>
@@ -137,7 +138,7 @@ const Home = () => {
                        <motion.h5
                          variants={secondTextVariant}
                          aria-hidden="true"
-                         className="absolute top-3 left-0 text-[#000000] text-5xl lg:text-6xl  xl:text-8xl  ml-5 uppercase"
+                         className="absolute top-3 left-0 text-[#000000] text-5xl lg:text-6xl  xl:text-[5.5rem]  ml-5 uppercase"
                        >
                          Frontend - dev
                        </motion.h5>
@@ -166,7 +167,7 @@ const Home = () => {
                        {/* First text (default) */}
                        <motion.h5
                          variants={firstTextVariant}
-                         className="h5 text-[#000000] text-5xl lg:text-6xl  xl:text-8xl  ml-5 uppercase"
+                         className="h5 text-[#000000] text-5xl lg:text-6xl  xl:text-[5.5rem]  ml-5 uppercase"
                        >
                          wordpress
                        </motion.h5>
@@ -175,7 +176,7 @@ const Home = () => {
                        <motion.h5
                          variants={secondTextVariant}
                          aria-hidden="true"
-                         className="h5 absolute top-3 left-0 text-[#000000] text-5xl lg:text-6xl  xl:text-8xl  ml-5 uppercase"
+                         className="h5 absolute top-3 left-0 text-[#000000] text-5xl lg:text-6xl  xl:text-[5.5rem]  ml-5 uppercase"
                        >
                          wordpress
                        </motion.h5>
@@ -206,7 +207,7 @@ const Home = () => {
                        {/* First text (default) */}
                        <motion.h5
                          variants={firstTextVariant}
-                         className="text-[#000000] text-5xl lg:text-6xl  xl:text-8xl  ml-5 uppercase"
+                         className="text-[#000000] text-3xl lg:text-5xl  xl:text-7xl  ml-5 uppercase"
                        >
                         backend
                        </motion.h5>
@@ -215,7 +216,7 @@ const Home = () => {
                        <motion.h5
                          variants={secondTextVariant}
                          aria-hidden="true"
-                         className="absolute top-10 left-0 text-[#000000] text-5xl lg:text-6xl  xl:text-8xl  ml-5 uppercase"
+                         className="absolute top-3 left-0 text-[#000000] text-3xl lg:text-5xl  xl:text-7xl  ml-5 uppercase"
                        >
                         backend
                        </motion.h5>
@@ -227,7 +228,7 @@ const Home = () => {
         </div>
        <div className='circle- '>
        <div className="circle-container">
-      <div className="circle">
+      <div className="circle" onClick={() => navigate('/profile')}>
         {text.split("").map((char, i) => (
           <span
             key={i}
@@ -239,7 +240,7 @@ const Home = () => {
         ))}
       </div>
       {/* Icon in the middle */}
-      <div className="icon-center "  >
+      <div className="icon-center "  onClick={() => navigate('/profile')}>
       <FontAwesomeIcon 
         className='cursor-pointer'
         icon={faArrowRight} 
@@ -336,7 +337,7 @@ const Home = () => {
         ))}
       </div>
       {/* Icon in the middle */}
-      <div className="icon-center "  >
+      <div className="icon-center "  onClick={() => navigate('/profile')}>
       <FontAwesomeIcon 
         className='cursor-pointer text-black'
         icon={faArrowRight} 

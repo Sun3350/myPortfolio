@@ -49,12 +49,12 @@ const Loader = () => {
 
           {/* Text on black slide */}
           <motion.div
-            style={{ position: 'absolute', bottom: '50%', left: '40%', transform: 'translate(-50%, 50%)', color: 'white', fontSize: '100px', textAlign: 'center' }} // Centered and larger font
+            style={{ position: 'absolute', bottom: '45%', left: '45%', transform: 'translate(-50%, 50%)', color: 'white', fontSize: '100px', textAlign: 'center' }} // Centered and larger font
             initial="hidden"
             animate="visible"
             exit="exit" // Ensure exit is triggered
             variants={textSlideVariants}
-            className='italic font-loader'
+            className='font-loader'
           >
             AI
           </motion.div>

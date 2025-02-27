@@ -40,7 +40,6 @@ font-style: italic;
 h5{
   font-family: "Fraunces", serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 40px;
 }
 
@@ -96,7 +95,6 @@ body::-webkit-scrollbar-track {
 
 .font-loader{
   font-family: "Fraunces", serif;
-  font-style: italic;
 }
 
 @media screen and (max-width: 550px){

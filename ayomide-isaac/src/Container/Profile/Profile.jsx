@@ -51,8 +51,8 @@ const Profile = () => {
             <div className='w-[50%] about-one'>
             <img className='profile2-image w-full h-full rounded-[10px]' src={profile2} alt="" /></div>
            <div className='h-[70%]  w-[50%]  about-two p-0 md:pl-16 lg:px-20'> 
-            <p className='font-bold text-3xl'>is a Lagos based freelanced web developer</p>
-            <p className='mt-10 text-sm lg:text-[15px]'>—Ayomide Isaac is a skilled full-stack web developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and back-end development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
+            <p className='font-bold text-3xl'>is a Lagos based FrontEnd web developer</p>
+            <p className='mt-10 text-sm lg:text-[15px]'>—Ayomide Isaac is a skilled Front-End and WordPress web-developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and WordPress web-development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
             <p className='mt-10 text-sm lg:text-[15px]'>His work reflects a commitment to clean code, innovative problem-solving, and a constant drive for improvement, making him a valuable asset in any tech-driven project.</p>
            </div></div>
           
@@ -72,7 +72,7 @@ const Profile = () => {
         <div className='w-full md:w-3/4  h-full  text-left font-bold text-2xl lg:text-3xl'>
           <img src={profile} alt="" style={{width:'20%'}} className="mb-10" />
            <div >
-       "His journey as a full-stack developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
+       "His journey as a Front-End and WordPress web-developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
        </div>
         </div>
       
@@ -321,8 +321,8 @@ const Profile = () => {
         animate={{ y: activeIndex === -1 ? "0%" : "-100%" }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
       >
-         <div className="w-full container1 flex justify-between h-20  px-5 md:px-14 items-center">
-          <a href="/" className="text-sm sm:text-1xl uppercase">HOME</a>
+         <div className="w-full flex justify-between h-20  px-5 md:px-14 items-center">
+          <a href="/home" className="text-sm sm:text-1xl uppercase">HOME</a>
           <a href="/Achieve" className=" text-sm sm:text-1xl uppercase">Achieve</a>
         </div>
         <div className="profile-image-container">
