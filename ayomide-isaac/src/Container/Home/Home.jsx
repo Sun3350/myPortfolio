@@ -109,9 +109,9 @@ const Home = () => {
           <div className='w-1/2 h-60 flex flex-col py-8  ml-10'>
           <div className='flex w-full flex-col mb-5 lg:mb-8'>
             <h1 className='text-1xl md:text-2xl font-semibold'>Ayomide Isaac</h1>
-            <h2 className='mt-2 text-sm lg:text-1xl uppercase '>FrontEnd & Wordpress Developer</h2>
+            <h2 className='mt-2 text-sm lg:text-1xl uppercase '>FrontEnd, Mobile-App & Wordpress Developer</h2>
           </div>
-          <p className='text-sm lg:text:xs' >Base in Lagos Nigeria</p>
+          <p className='text-sm lg:text:xs' >Based in Lagos Nigeria</p>
          </div>
          </div>
            <div className='w-3/5'>
@@ -209,7 +209,7 @@ const Home = () => {
                          variants={firstTextVariant}
                          className="text-[#000000] text-3xl lg:text-5xl  xl:text-7xl  ml-5 uppercase"
                        >
-                        backend
+                        Mobile-Dev
                        </motion.h5>
                  
                        {/* Second text (hidden by default) */}
@@ -218,7 +218,7 @@ const Home = () => {
                          aria-hidden="true"
                          className="absolute top-3 left-0 text-[#000000] text-3xl lg:text-5xl  xl:text-7xl  ml-5 uppercase"
                        >
-                        backend
+                        Mobile-Dev
                        </motion.h5>
                      </motion.div>
                     

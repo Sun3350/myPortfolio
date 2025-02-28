@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion,  useScroll, useTransform } from "framer-motion";
 import profile from '../../Images/ay 1.png';
-import profile2 from '../../Images/ay 4.png'
+import profile2 from '../../Images/ay 5.png'
 import profile3 from '../../Images/ay 2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -51,8 +51,8 @@ const Profile = () => {
             <img className=' w-full h-full rounded-[10px]' src={profile2} alt="" />
             </div>
            <div className='h-[70%]   about-two p-0 md:pl-16 lg:px-20'> 
-            <p className='font-bold text-3xl'>is a Lagos based FrontEnd web developer</p>
-            <p className='mt-10 text-sm lg:text-[15px]'>—Ayomide Isaac is a skilled Front-End and WordPress web-developer with a passion for building dynamic, user-friendly applications. With experience in both front-end and WordPress web-development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
+            <p className='font-bold text-3xl'>He's a multi-faceted Lagos-based developer</p>
+            <p className='mt-10 text-sm lg:text-[15px]'>—Ayomide Isaac is a skilled Front-End, Mobile-App and WordPress developer with a passion for building dynamic, user-friendly applications. With experience in front-end, mobile-App and WordPress web-development, he has a knack for turning complex ideas into seamless digital experiences. Ayomide's expertise spans modern JavaScript frameworks, responsive design, and efficient API integrations, allowing him to deliver robust and scalable solutions across various platforms.</p>
             <p className='mt-10 text-sm lg:text-[15px]'>His work reflects a commitment to clean code, innovative problem-solving, and a constant drive for improvement, making him a valuable asset in any tech-driven project.</p>
            </div>
            </div>
@@ -72,7 +72,7 @@ const Profile = () => {
         <div className='w-full md:w-3/4  h-full  text-left font-bold text-2xl lg:text-3xl'>
           <img src={profile} alt=""  className="mb-10 md:w-[20%] w-30%" />
            <div className="">
-       "His journey as a Front-End and WordPress web-developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
+       "His journey as a Front-End. Mobile-App and WordPress web-developer is filled with challenges that inspire growth. Each setback is a lesson, fueling his passion for problem-solving and the endless possibilities in technology."
        </div>
         </div>
       
@@ -98,8 +98,8 @@ const Profile = () => {
             </div>
             <div className=" about-two p-0 md:pl-16 lg:px-20 flex flex-col justify-center items-center ">
               <div className="font-light w-full h-36 md:text-[200px] text-[100px] flex justify-center items-center work-p ">Work</div>
-              <div className='hhh text-[17px] md:text-lg my-3 md:my-10 px-5 md:p-0'>Ayomide Isaac as worked across different tech companies,realEstate companies, finTech companies, digitalmarketing companies and now a freelancer.</div>
-              <div className='flex w-full md:mt-0 mt-3 md:p-0 px-5 items-center'><div className='work-direction'><FontAwesomeIcon icon={faArrowDown}/></div> <div className='ml-5 w-60  text-[14px] md:text-[18px] leading-5'>Here are some featured projects, keep scrolling to seee</div></div>
+              <div className='hhh text-[17px] md:text-lg my-3 md:my-10 px-5 md:p-0'>Ayomide Isaac as worked across different tech companies,realEstate companies, finTech companies, digitalmarketing companies and so on.</div>
+              <div className='flex w-full md:mt-0 mt-3 md:p-0 px-5 items-center'><div className='work-direction'><FontAwesomeIcon icon={faArrowDown}/></div> <div className='ml-5 w-60  text-[14px] md:text-[18px] leading-5'>Here are some featured projects, keep scrolling to see</div></div>
 
             </div>
             </div>
@@ -158,7 +158,14 @@ const Profile = () => {
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Developed and maintained responsive web applications, implementing key frontend features using JavaScript
+frameworks like React.
+Collaborated with design and backend teams to ensure unified integration of APIs and improve user experience across
+platforms.
+Designed and implemented secure login and password reset features for a mobile application, ensuring user
+authentication and data protection
+.Integrated backend APIs for user authentication and password recovery, ensuring secure communication between the
+app and the server.</span>
                     </div>
                 </div>
                 <div className="md:w-[30%] w-full flex justify-center h-full">
@@ -194,7 +201,12 @@ const Profile = () => {
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Collaborated with a team of frontend and backend developers to design and develop a responsive and feature-rich
+fintech website.
+Developed a WebView-based mobile application that extended the functionality of the fintech website to mobile users.
+Customized website features for WebView, ensuring smooth navigation, consistent design, and responsive layouts
+across devices.
+</span>
                     </div>
                 </div>
                 <div className="md:w-[30%] w-full flex justify-center h-full">
@@ -230,7 +242,12 @@ const Profile = () => {
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Designed and developed two fully functional WordPress websites for the company, tailored to meet specific business
+requirements and branding guidelines.
+Customized WordPress themes and plugins to enhance website functionality, ensuring a unique and user-friendly
+experience
+Integrated third-party tools and APIs to enhance website capabilities, including payment gateways, email marketing
+platforms, and analytics tools</span>
                     </div>
                 </div>
                 <div className="md:w-[30%] w-full flex justify-center h-full">
@@ -267,7 +284,11 @@ const Profile = () => {
                  
                   <div className=" w-full">
                     <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quidem animi pariatur sint assumenda eligendi, ab, similique, perspiciatis aliquam eius beatae! Cum inventore magnam a amet molestias sit ratione sed neque, praesentium quod eos quasi dolorem vel sequi dolorum eligendi labore expedita accusantium vero ipsam facere autem quibusdam perspiciatis blanditiis.</span>
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Designed and developed two fully functional WordPress websites for the company, tailored to meet specific business
+requirements and branding guidelines.
+Customized WordPress themes and plugins to enhance website functionality, ensuring a unique and user-friendly
+experience
+</span>
                     </div>
                 </div>
                 <div className="md:w-[30%] w-full flex justify-center h-full">
@@ -374,7 +395,7 @@ const Profile = () => {
   }, [activeIndex, totalItems]);
   return (
     
-    <div className="profile relative h-[99vh] w-full overflow-hidden">
+    <div className="profile relative h-[100vh] w-full overflow-hidden">
       {/* Initial Top Section */}
       <motion.div
         className="  flex items-center flex-col w-full h-full text-black text-4xl font-bold bg-slate-100"
