@@ -298,66 +298,71 @@ const Profile = () => {
   ];
 
   const totalItems = items.length;
-  // Set the initial activeIndex to -1 for the top section.
+  // Start with top section visible (activeIndex = -1)
   const [activeIndex, setActiveIndex] = useState(-1);
   const isScrolling = useRef(false);
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  // Sensitivity & delay settings
-  const SCROLL_DELAY = 1000;       // Delay in ms to prevent rapid scrolls
-  const MIN_SCROLL_DELTA = 50;       // Minimum deltaY to trigger a scroll
-  const MIN_SWIPE_DISTANCE = 80;     // Minimum swipe distance in px
+  // Sensitivity / threshold settings:
+  const SCROLL_DELAY = 1000;       // Delay to prevent rapid transitions
+  const MIN_SCROLL_DELTA = 50;       // Minimum mouse scroll delta to trigger
+  const MIN_SWIPE_DISTANCE = 80;     // Minimum vertical swipe distance to trigger
 
-  // For touch events
+  // Refs to track touch positions:
   const touchStartRef = useRef(0);
   const touchEndRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = (event) => {
       if (isScrolling.current) return;
-      if (Math.abs(event.deltaY) < MIN_SCROLL_DELTA) return; // Ignore small scrolls
+      if (Math.abs(event.deltaY) < MIN_SCROLL_DELTA) return;
 
       isScrolling.current = true;
       setTimeout(() => (isScrolling.current = false), SCROLL_DELAY);
 
       if (event.deltaY > 0 && activeIndex < totalItems - 1) {
-        // Scroll Down: move to next section
-        setActiveIndex((prev) => prev + 1);
+        setActiveIndex(prev => prev + 1);
       } else if (event.deltaY < 0 && activeIndex > -1) {
-        // Scroll Up: allow going back to top (activeIndex becomes -1)
-        setActiveIndex((prev) => prev - 1);
+        setActiveIndex(prev => prev - 1);
       }
     };
 
+    // Only initiate stacking if the swipe does not start on a clickable element.
     const handleTouchStart = (e) => {
+      // If the target is a button or link, do nothing:
+      if (e.target.closest("button, a")) return;
       touchStartRef.current = e.touches[0].clientY;
     };
 
     const handleTouchMove = (e) => {
+      // Again, if over a clickable element, ignore:
+      if (e.target.closest("button, a")) return;
       touchEndRef.current = e.touches[0].clientY;
     };
 
     const handleTouchEnd = () => {
       if (isScrolling.current) return;
       const swipeDistance = touchStartRef.current - touchEndRef.current;
+      // Only trigger if the swipe distance is significant:
       if (Math.abs(swipeDistance) < MIN_SWIPE_DISTANCE) return;
 
       isScrolling.current = true;
       setTimeout(() => (isScrolling.current = false), SCROLL_DELAY);
 
       if (swipeDistance > 0 && activeIndex < totalItems - 1) {
-        // Swipe Up: move to next section
-        setActiveIndex((prev) => prev + 1);
+        // Swipe up → scroll down:
+        setActiveIndex(prev => prev + 1);
       } else if (swipeDistance < 0 && activeIndex > -1) {
-        // Swipe Down: move to previous section (allowing activeIndex to become -1)
-        setActiveIndex((prev) => prev - 1);
+        // Swipe down → scroll up:
+        setActiveIndex(prev => prev - 1);
       }
     };
 
+    // Attach event listeners:
     window.addEventListener("wheel", handleScroll);
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
     window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
@@ -367,7 +372,6 @@ const Profile = () => {
       window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [activeIndex, totalItems]);
-
   return (
     
     <div className="profile relative h-[99vh] w-full overflow-hidden">
