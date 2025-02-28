@@ -64,7 +64,7 @@ const Profile = () => {
     {
      
       content: (
-        <div className=" w-full h-full p-3 md:p-10">
+        <div className=" w-full h-full  flex items-center justify-center">
           <motion.div
         className="top-container p-5 md:p-14 lg:p-28 w-full"
         
@@ -110,8 +110,8 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full md:p-10 p-5">
-          <div className="flex md:flex-col flex-col-reverse">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%]   ">
              <div className="w-full ">
               <h2 className="text-4xl">Gloo</h2>
               <a className="text-lg" href="https://gloo.com">www.gloo.com</a> 
@@ -146,8 +146,8 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full md:p-10 p-5">
-          <div className="flex md:flex-col flex-col-reverse">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
              <h2 className="text-4xl">Comeriver LTD</h2>
              <a className="text-lg" href="https://gloo.com">www.comeriver.com</a> 
@@ -182,8 +182,8 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full md:p-10 p-5">
-          <div className="flex md:flex-col flex-col-reverse">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
               <h2 className="md:text-4xl text-3xl">DE-HELPMATE GLOBAL CONCEPT</h2>
               <a className="text-lg" href="https://dehelpmate.com.ng/">www.dehelpmate.com.ng</a> 
@@ -218,8 +218,8 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full md:p-10 p-5">
-          <div className="flex md:flex-col flex-col-reverse">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
               <h2 className="text-4xl">NestEbook</h2>
               <a className="text-lg" href="https://nestebook.com/">www.nestebook.com</a> 
@@ -254,8 +254,8 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full md:p-10 p-5">
-          <div className="flex md:flex-col flex-col-reverse">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
               <h2 className="md:text-4xl text-3xl">NestGeeks Realty and Investment LTD</h2>
               <a className="text-lg" href="https://nestgeeks.org">www.nestgeeks.org</a>
