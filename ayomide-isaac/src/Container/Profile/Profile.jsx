@@ -39,7 +39,6 @@ import nestgeek6 from '../../Images/nestgeek/nestgeek (6).png';
 import EmblaCarousel from "../carousel/EmblaCarousel";
 
 const Profile = () => {
-  const [activeIndex, setActiveIndex] = useState(-1); // Start with the top section
   const OPTIONS = { loop: true }
 
 
@@ -47,7 +46,7 @@ const Profile = () => {
     {
       content: (
         <div className="flex w-full p-5 md:p-10 justify-center items-center">
-          <div className=" top-container top-container2 flex items-center ">
+          <div className=" top-container top-conainer2 flex items-center ">
             <div className='profile2-image about-one'>
             <img className=' w-full h-full rounded-[10px]' src={profile2} alt="" />
             </div>
@@ -299,23 +298,34 @@ const Profile = () => {
   ];
 
   const totalItems = items.length;
-  const isScrolling = useRef(false); // Prevent multiple triggers
+  // Set the initial activeIndex to -1 for the top section.
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const isScrolling = useRef(false);
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  
+
+  // Sensitivity & delay settings
+  const SCROLL_DELAY = 1000;       // Delay in ms to prevent rapid scrolls
+  const MIN_SCROLL_DELTA = 50;       // Minimum deltaY to trigger a scroll
+  const MIN_SWIPE_DISTANCE = 80;     // Minimum swipe distance in px
+
+  // For touch events
   const touchStartRef = useRef(0);
   const touchEndRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = (event) => {
-      if (isScrolling.current) return; // Prevent rapid scrolling
+      if (isScrolling.current) return;
+      if (Math.abs(event.deltaY) < MIN_SCROLL_DELTA) return; // Ignore small scrolls
 
       isScrolling.current = true;
-      setTimeout(() => (isScrolling.current = false), 1100); // Delay for smooth transition
+      setTimeout(() => (isScrolling.current = false), SCROLL_DELAY);
 
       if (event.deltaY > 0 && activeIndex < totalItems - 1) {
+        // Scroll Down: move to next section
         setActiveIndex((prev) => prev + 1);
-      } else if (event.deltaY < 0 && activeIndex > 0) {
+      } else if (event.deltaY < 0 && activeIndex > -1) {
+        // Scroll Up: allow going back to top (activeIndex becomes -1)
         setActiveIndex((prev) => prev - 1);
       }
     };
@@ -330,15 +340,17 @@ const Profile = () => {
 
     const handleTouchEnd = () => {
       if (isScrolling.current) return;
+      const swipeDistance = touchStartRef.current - touchEndRef.current;
+      if (Math.abs(swipeDistance) < MIN_SWIPE_DISTANCE) return;
 
       isScrolling.current = true;
-      setTimeout(() => (isScrolling.current = false), 1100); // Prevent spam scrolling
+      setTimeout(() => (isScrolling.current = false), SCROLL_DELAY);
 
-      if (touchStartRef.current - touchEndRef.current > 50 && activeIndex < totalItems - 1) {
-        // Swipe Up → Scroll Down
+      if (swipeDistance > 0 && activeIndex < totalItems - 1) {
+        // Swipe Up: move to next section
         setActiveIndex((prev) => prev + 1);
-      } else if (touchEndRef.current - touchStartRef.current > 50 && activeIndex > 0) {
-        // Swipe Down → Scroll Up
+      } else if (swipeDistance < 0 && activeIndex > -1) {
+        // Swipe Down: move to previous section (allowing activeIndex to become -1)
         setActiveIndex((prev) => prev - 1);
       }
     };
@@ -358,7 +370,7 @@ const Profile = () => {
 
   return (
     
-    <div className="profile relative h-screen w-full overflow-hidden">
+    <div className="profile relative h-[99vh] w-full overflow-hidden">
       {/* Initial Top Section */}
       <motion.div
         className="  flex items-center flex-col w-full h-full text-black text-4xl font-bold bg-slate-100"
