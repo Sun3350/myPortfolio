@@ -6,6 +6,8 @@ import profile3 from '../../Images/ay 2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './profile.css';
+import { useNavigate} from 'react-router-dom'
+
 import gloo1 from '../../Images/gloo/gloo1.png';
 import gloo2 from '../../Images/gloo/gloo2.png';
 import gloo3 from '../../Images/gloo/gloo3.png';
@@ -40,6 +42,8 @@ import EmblaCarousel from "../carousel/EmblaCarousel";
 
 const Profile = () => {
   const OPTIONS = { loop: true }
+  const text = "• VIEW AYOMIDE ISAAC's PROFILE •";
+  const navigate =  useNavigate()
 
 
   const items = [
@@ -110,7 +114,7 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center ">
           <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%]   ">
              <div className="w-full ">
               <h2 className="text-4xl">Gloo</h2>
@@ -146,7 +150,7 @@ const Profile = () => {
     {
      
       content: (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center ">
           <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
              <h2 className="text-4xl">Comeriver LTD</h2>
@@ -189,7 +193,7 @@ app and the server.</span>
     {
      
       content: (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center ">
           <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
               <h2 className="md:text-4xl text-3xl">DE-HELPMATE GLOBAL CONCEPT</h2>
@@ -230,7 +234,7 @@ across devices.
     {
      
       content: (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center ">
           <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
               <h2 className="text-4xl">NestEbook</h2>
@@ -271,7 +275,7 @@ platforms, and analytics tools</span>
     {
      
       content: (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center ">
           <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
              <div className="w-full ">
               <h2 className="md:text-4xl text-3xl">NestGeeks Realty and Investment LTD</h2>
@@ -311,9 +315,59 @@ experience
     },
    
     {
-      title: "Thank You!",
-      description: "That's all about me. Thanks for scrolling!",
-      content: <p className="text-xl">🚀 Hope to connect with you soon!</p>,
+      content: (
+         <div className="w-full h-full flex justify-center items-end md:items-center">
+             <div className=" w-full h-[90%] md:h-[70%] thank">
+              <div className="w-[25%] h-[60%] md:flex hidden ">
+              <div className='w-full h-full flex justify-center items-center flex-col'>
+                <img src={profile3} alt=""  style={{width:'70%'}}/>
+                <p className='text-[14px] mt-5'>Ayomide Isaac (August 2024)</p>
+            </div> 
+              </div>
+             <div className="w-[95%] h-[50%] md:h-full flex  flex-col items-center">
+                       <h6 className="text-[80px] md:text-[200px] sm:text-[100px] ">Thank you!</h6>
+                       <div className="flex flex-wrap justify-center gap-2 p-4">
+                        <button className="social-button">X</button>
+                        <a href="www.linkedin.com/in/ayomide-isaac-profile">
+                          <button className="social-button">LinkedIn</button>
+                        </a>
+                        <button className="social-button">Instagram</button>
+                        <a href="mailto:isaacayomide2359@gmail.com">
+                          <button className="social-button">Mail me</button>
+                        </a>
+                        <a href="/AyomideIsaacResume (1).pdf" download="AyomideIsaacResume CV.pdf">
+                          <button className="social-button">Download CV</button>
+                        </a>
+                        </div>
+
+             </div>
+             <div className="md:w-[25%] w-[100%] h-[50%] md:h-[60%] ">
+              
+       <div className="circle-container ">
+      <div className="circle">
+        {text.split("").map((char, i) => (
+          <span
+            key={i}
+            style={{ transform: `rotate(${i * (360 / text.length)}deg)` }}
+            className="circle-text text-black"
+          >
+            {char}
+          </span>
+        ))}
+      </div>
+      {/* Icon in the middle */}
+      <div className="icon-center "  onClick={() => navigate('/profile')}>
+      <FontAwesomeIcon 
+        className='cursor-pointer text-black'
+        icon={faArrowRight} 
+      />{/* You can replace this with any icon or image */}
+      </div>
+    </div>
+       </div>
+             </div>
+         </div>
+      
+      ),
       bgColor: "bg-yellow-500",
     },
   ];

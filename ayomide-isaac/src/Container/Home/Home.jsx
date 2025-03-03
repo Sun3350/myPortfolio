@@ -8,7 +8,7 @@ import mobileProfile from '../../Images/ay 5.png'
 import './home.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import {useNavigat, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 const Home = () => {
   
   const text = "• VIEW AYOMIDE ISAAC's PROFILE •";
