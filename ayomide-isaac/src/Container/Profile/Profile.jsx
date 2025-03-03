@@ -94,7 +94,7 @@ const Profile = () => {
       content: (
         <div className="flex bg-stone-900 text-white h-full items-center justify-center w-full ">
               <div className="top-container">
-              <div className='w-[50%] about-one'>
+              <div className=' about-one'>
             <div className='w-full h-full flex justify-center items-center flex-col'>
                 <img src={profile3} alt=""  style={{width:'70%'}}/>
                 <p className='text-[14px] mt-5'>Ayomide Isaac (August 2024)</p>

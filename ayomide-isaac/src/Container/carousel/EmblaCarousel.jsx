@@ -104,6 +104,7 @@ const EmblaCarousel = (props) => {
               maxHeight: '90%',
             }}
           >
+
             <TransformWrapper
               initialScale={1}
               wheel={{ step: 0.2 }}
@@ -123,6 +124,8 @@ const EmblaCarousel = (props) => {
               )}
             </TransformWrapper>
           </div>
+             <div className=' absolute top-10 right-10 rounded-[50%] bg-white flex justify-center items-center text-black py-1  px-3 cursor-pointer'>X</div>
+
         </div>
       )}
     </>
