@@ -147,49 +147,7 @@ const Profile = () => {
     
       bgColor: "bg-purple-500",
     },
-    {
-     
-      content: (
-        <div className="w-full h-full flex items-center justify-center ">
-          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
-             <div className="w-full ">
-             <h2 className="text-4xl">Comeriver LTD</h2>
-             <a className="text-lg" href="https://gloo.com">www.comeriver.com</a> 
-             <p className="md:text-[18px] text-[13px] my-1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
-             <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">Front-End Devoloper</span></h6>
-                <div className="flex w-full justify-between mt-5 mobile">
-                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
-                 
-                  <div className=" w-full">
-                    <p className="mt-0 text-[20px] font-bold">Description:</p> 
-                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Developed and maintained responsive web applications, implementing key frontend features using JavaScript
-frameworks like React.
-Collaborated with design and backend teams to ensure unified integration of APIs and improve user experience across
-platforms.
-Designed and implemented secure login and password reset features for a mobile application, ensuring user
-authentication and data protection
-.Integrated backend APIs for user authentication and password recovery, ensuring secure communication between the
-app and the server.</span>
-                    </div>
-                </div>
-                <div className="md:w-[30%] w-full flex justify-center h-full">
-                   <button className="py-3 md:px-10 px-20 text-[15px] bg-yellow-600 text-white rounded-[50px] "><a href="https://comeriver.com">Visit</a></button>
-
-                </div>
-              </div>
-             </div>
-             <div>
-
-             </div>
-             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
-              <EmblaCarousel options={OPTIONS} slides={[comeriver1, comeriver2, comeriver3, comeriver4, comeriver5, comeriver6]} />
-            </div>
-          </div>
-        </div>
-      ),
     
-      bgColor: "bg-purple-500",
-    },
     {
      
       content: (
@@ -491,3 +449,47 @@ experience
 };
 
 export default Profile;
+
+{/** 
+     
+      content: (
+        <div className="w-full h-full flex items-center justify-center ">
+          <div className="flex md:flex-col flex-col-reverse w-[93%] md:w[90%] ">
+             <div className="w-full ">
+             <h2 className="text-4xl">Comeriver LTD</h2>
+             <a className="text-lg" href="https://gloo.com">www.comeriver.com</a> 
+             <p className="md:text-[18px] text-[13px] my-1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic, dolor ab at nostrum vel!</p>
+             <h6 className="font-bold">Role: <span className="text-[16px] font-[400] ">Front-End Devoloper</span></h6>
+                <div className="flex w-full justify-between mt-5 mobile">
+                <div className="md:w-[75%] w-full md:h-[20vh] h-auto pb-5 md:pb-0  ">
+                 
+                  <div className=" w-full">
+                    <p className="mt-0 text-[20px] font-bold">Description:</p> 
+                    <span className="md:text-[14px] text-[14px]  leading-5 font-[400] ">Developed and maintained responsive web applications, implementing key frontend features using JavaScript
+frameworks like React.
+Collaborated with design and backend teams to ensure unified integration of APIs and improve user experience across
+platforms.
+Designed and implemented secure login and password reset features for a mobile application, ensuring user
+authentication and data protection
+.Integrated backend APIs for user authentication and password recovery, ensuring secure communication between the
+app and the server.</span>
+                    </div>
+                </div>
+                <div className="md:w-[30%] w-full flex justify-center h-full">
+                   <button className="py-3 md:px-10 px-20 text-[15px] bg-yellow-600 text-white rounded-[50px] "><a href="https://comeriver.com">Visit</a></button>
+
+                </div>
+              </div>
+             </div>
+             <div>
+
+             </div>
+             <div className="md:mt-10 mt-2 mb-4 md:mb-0">
+              <EmblaCarousel options={OPTIONS} slides={[comeriver1, comeriver2, comeriver3, comeriver4, comeriver5, comeriver6]} />
+            </div>
+          </div>
+        </div>
+      ),
+    
+      bgColor: "bg-purple-500",
+    */}
