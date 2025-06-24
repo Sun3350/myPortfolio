@@ -1,23 +1,25 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-h4{
-
-    font-size: 40px;
-    font-weight: 100;
-  
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+h4 {
+  font-size: 40px;
+  font-weight: 100;
 }
 
-*{
+* {
   font-family: "Raleway", sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0908;
+  color: #f7f7ff;
 }
 
 .cursor-follower {
@@ -26,36 +28,16 @@ h4{
   left: 0;
   width: 20px; /* Size of the dot */
   height: 20px;
-  background-color: rgba(202, 69, 7, 0.5) ; /* Color of the dot */
+  background-color: rgba(202, 69, 7, 0.5); /* Color of the dot */
   border-radius: 50%;
   pointer-events: none; /* Prevents the dot from interfering with clicks */
   z-index: 1000; /* Ensures the dot stays on top of other elements */
 }
-h6{
-  font-family: "Fraunces", serif;
-font-weight: 300;
-font-style: italic;
-}
 
-h5{
-  font-family: "Fraunces", serif;
-  font-weight: 200;
-  font-size: 40px;
-}
-
-a{
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-span{
+span {
   font-family: "Raleway", sans-serif;
   font-weight: 100;
   font-size: 20vh;
-
 }
 
 @media screen and (max-width: 1024px) {
@@ -67,9 +49,8 @@ html {
   scroll-behavior: smooth;
 }
 
-
- /* Custom scrollbar styling */
- body::-webkit-scrollbar {
+/* Custom scrollbar styling */
+body::-webkit-scrollbar {
   width: 12px; /* Width of the scrollbar */
 }
 
@@ -93,11 +74,11 @@ body::-webkit-scrollbar-track {
   transition: opacity 0.5s ease-in-out;
 }
 
-.font-loader{
+.font-loader {
   font-family: "Fraunces", serif;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   span {
     font-size: 60px;
   }
