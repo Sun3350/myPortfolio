@@ -17,24 +17,21 @@ const workData = {
       title: "Modern Web UI",
       desc: "Built with React, TailwindCSS and Framer Motion.",
       tech: "React",
+      link: "https://dehelpmate.com/",
     },
     {
       image: web2,
       title: "Admin Dashboard",
       desc: "Interactive dashboard with live stats.",
       tech: "Next.js",
+      link: "https://admin.busbuzzer.com/auth",
     },
     {
       image: web3,
       title: "Admin Dashboard",
       desc: "Interactive dashboard with live stats.",
       tech: "Next.js",
-    },
-    {
-      image: web1,
-      title: "Admin Dashboard",
-      desc: "Interactive dashboard with live stats.",
-      tech: "Next.js",
+      link: "https://gloo.com/resources",
     },
   ],
   mobile: [
@@ -43,12 +40,14 @@ const workData = {
       title: "Mobility/ Ride-hailing App",
       desc: "Cross-platform app with smooth UX.",
       tech: "React Native",
+      link: "https://example.com/project1",
     },
     {
       image: Mobile2,
       title: "FinTech App",
       desc: "Budgeting app for Android/iOS.",
       tech: "Expo",
+      link: "https://example.com/project1",
     },
   ],
   wordpress: [
@@ -57,12 +56,14 @@ const workData = {
       title: "Real Estate Website",
       desc: "Elegant theme with custom animations.",
       tech: "WordPress",
+      link: "https://nestGeeks.org",
     },
     {
       image: wp1,
       title: "E-commerce Store",
       desc: "Clean layout for small businesses.",
       tech: "Elementor",
+      link: "https://nestebook.com/",
     },
   ],
 };
@@ -82,11 +83,14 @@ const Home = () => {
   const aboutTextControls = useAnimation();
 
   useEffect(() => {
-    // First page animations (unchanged)
+    const screenWidth = window.innerWidth;
+
+    const xValue = screenWidth < 768 ? "-70%" : "-58%"; // mobile vs desktop
+    const yValue = screenWidth < 768 ? "130%" : "90%"; // mobile vs desktop
     const startFirstPageAnimations = async () => {
       await Promise.all([
         leftTextControls.start({
-          x: "-50%",
+          x: xValue,
           opacity: 1,
           transition: {
             type: "spring",
@@ -97,7 +101,7 @@ const Home = () => {
           },
         }),
         rightTextControls.start({
-          x: "80%",
+          x: yValue,
           opacity: 1,
           transition: {
             type: "spring",
@@ -137,13 +141,13 @@ const Home = () => {
 
       // First page animations
       leftTextControls.start({
-        x: `calc(-50% - ${firstPageProgress * 100}%)`,
+        x: `calc(${xValue} - ${firstPageProgress * 100}%)`,
         opacity: 1 - firstPageProgress,
         transition: { duration: 0 },
       });
 
       rightTextControls.start({
-        x: `calc(80% + ${firstPageProgress * 100}%)`,
+        x: `calc(${yValue} + ${firstPageProgress * 100}%)`,
         opacity: 1 - firstPageProgress,
         transition: { duration: 0 },
       });
@@ -226,7 +230,7 @@ const Home = () => {
 
         {/* Top Right Sentences - Smaller on mobile */}
         <motion.div
-          className="absolute top-14 sm:top-10 right-4 sm:right-10 text-right space-y-1 sm:space-y-2 text-xs sm:text-sm text-white"
+          className="absolute top-24 sm:top-12 right-4 sm:right-10 text-right space-y-1 sm:space-y-2 text-xs sm:text-sm text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}>
@@ -237,7 +241,7 @@ const Home = () => {
 
         {/* Bottom Left Sentences - Smaller on mobile */}
         <motion.div
-          className="absolute bottom-6 sm:bottom-10 left-4 sm:left-10 text-left space-y-1 sm:space-y-2 text-xs sm:text-sm text-white"
+          className="absolute bottom-14 sm:bottom-10 left-4 sm:left-10 text-left space-y-1 sm:space-y-2 text-xs sm:text-sm text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}>
@@ -248,7 +252,7 @@ const Home = () => {
       </div>
       <section className="w-full  text-white py-24 px-6 md:px-24 relative overflow-hidden">
         {/* Sticky ABOUT label */}
-        <div className="sticky top-10 left-0 z-20">
+        <div className=" left-0 z-20">
           <motion.h1
             className="text-4xl md:text-6xl font-bold text-blue-500"
             initial={{ x: -50, opacity: 0 }}
@@ -299,7 +303,7 @@ const Home = () => {
       </section>
       <section className="w-full min-h-screen  py-24 px-6 md:px-24 text-white relative overflow-hidden">
         {/* Sticky Work Label */}
-        <div className="sticky top-10 left-0 z-20">
+        <div className=" left-0 z-20">
           <motion.h1
             className="text-4xl md:text-6xl font-bold text-blue-600 mb-10"
             initial={{ x: -50, opacity: 0 }}
@@ -337,9 +341,12 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}>
           {workData[activeTab].map((item, index) => (
-            <motion.div
+            <motion.a
               key={index}
-              className="bg-black p-4 rounded-xl shadow-xl hover:scale-105 hover:bg-blue-600 transition duration-300 ease-in-out cursor-pointer"
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black p-4 rounded-xl shadow-xl hover:scale-105 hover:bg-blue-600 transition duration-300 ease-in-out cursor-pointer flex flex-col"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -351,13 +358,176 @@ const Home = () => {
               />
               <h3 className="text-lg font-bold">{item.title}</h3>
               <p className="text-gray-300 text-sm mb-2">{item.desc}</p>
-              <span className="text-xs px-3 py-1 bg-blue-600 text-white rounded-full">
+              <span className="text-xs px-3 py-1 w-fit bg-blue-600 text-white rounded-full">
                 {item.tech}
               </span>
+            </motion.a>
+          ))}
+        </motion.div>
+      </section>
+      <section className="w-full py-24 px-6 md:px-24 text-white relative overflow-hidden bg-[#0a0a0a]">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold text-blue-600 mb-10 "
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}>
+          SKILLS
+        </motion.h1>
+
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto text-center"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}>
+          {[
+            {
+              name: "HTML",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            },
+            {
+              name: "CSS",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            },
+            {
+              name: "TailwindCSS",
+              icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+            },
+            {
+              name: "JavaScript",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            },
+            {
+              name: "TypeScript",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+            },
+            {
+              name: "React",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            },
+            {
+              name: "Next.js",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+            },
+            {
+              name: "Node.js",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+            },
+            {
+              name: "React Native",
+              icon: "https://reactnative.dev/img/header_logo.svg",
+            },
+            {
+              name: "Expo",
+              icon: "https://cdn.worldvectorlogo.com/logos/expo-1.svg",
+            },
+            {
+              name: "WordPress",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg",
+            },
+            {
+              name: "Elementor",
+              icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Elementor_Logo.svg/2048px-Elementor_Logo.svg.png",
+            },
+            {
+              name: "Git & GitHub",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+            },
+            {
+              name: "MongoDB",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+            },
+
+            {
+              name: "C#",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+            },
+            {
+              name: ".NET",
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+            },
+          ].map((skill, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-900 p-4 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out flex flex-col items-center"
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}>
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className="w-10 h-10 mb-3 object-contain"
+              />
+              <p className="text-sm font-semibold">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>
       </section>
+
+      <section className="w-full py-24 px-6 md:px-24 text-white bg-black relative">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold text-blue-600 mb-10 "
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}>
+          CONTACT
+        </motion.h1>
+
+        <motion.div
+          className="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-xl"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}>
+          <p className="text-lg mb-6 text-gray-300">
+            Want to build something amazing together? Reach out to me.
+          </p>
+
+          <form className="space-y-6">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full p-3 rounded bg-black border border-gray-700 text-white"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full p-3 rounded bg-black border border-gray-700 text-white"
+            />
+            <textarea
+              rows="5"
+              placeholder="Your Message"
+              className="w-full p-3 rounded bg-black border border-gray-700 text-white"
+            />
+            <button
+              type="submit"
+              className="bg-blue-600 px-6 py-3 rounded-full text-white font-semibold hover:bg-blue-700 transition">
+              Send Message
+            </button>
+          </form>
+        </motion.div>
+      </section>
+      <footer className="w-full bg-[#0a0a0a] text-white py-10 px-6 md:px-24 text-center">
+        <p className="text-sm text-gray-400 mb-2">
+          © {new Date().getFullYear()} Ayomide Isaac. All Rights Reserved.
+        </p>
+        <div className="flex justify-center space-x-6 text-blue-500 text-xl mt-4">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i className="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:ayomide@example.com">
+            <i className="fas fa-envelope"></i>
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
